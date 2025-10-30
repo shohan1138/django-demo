@@ -9,7 +9,7 @@ This project is a simple Django application that allows users to register for ev
 
 ## How to Run
 ```bash
-git clone https://github.com/<your-username>/django-demo.git
+git clone [https://github.com/<your-username>/django-demo.git](https://github.com/shohan1138/django-demo.git)
 cd django-demo
 pip install -r requirements.txt
 python manage.py migrate
