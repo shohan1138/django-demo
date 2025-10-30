@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration List</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: auto;
+      }
+      th,
+      td {
+        border: 1px solid #aaa;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center">Event Registrations</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Person</th>
+          <th>Number</th>
+          <th>Email</th>
+          <th>Event</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for reg in registrations %}
+        <tr>
+          <td>{{ reg.person }}</td>
+          <td>{{ reg.number }}</td>
+          <td>{{ reg.email }}</td>
+          <td>{{ reg.event }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="4">No registrations found.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
+``

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Registration</title>
+    <script>
+      function validateFileSize(event) {
+        const fileInput = document.getElementById("id_file");
+        const file = fileInput.files[0];
+        const maxSize = 10 * 1024 * 1024; // 10 MB
+
+        if (file && file.size > maxSize) {
+          alert("File size must not exceed 10 MB.");
+          event.preventDefault(); // Stop form submission
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Register for Event</h2>
+    <form
+      method="post"
+      enctype="multipart/form-data"
+      onsubmit="validateFileSize(event)"
+    >
+      {% csrf_token %} {{ form.as_p }}
+      <p><strong>Note:</strong> Maximum file size is 10 MB.</p>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
